@@ -10,6 +10,8 @@ func main()  {
 	c := "git pull"
 	cmd := exec.Command("/bin/bash", "-c", c)
 	out, err := cmd.Output()
-	fmt.Println(err)
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println(string(out))
 }
