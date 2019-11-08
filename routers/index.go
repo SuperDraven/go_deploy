@@ -6,6 +6,6 @@ import (
 )
 
 func SetRouter(r *gin.Engine) {
-	r.GET("/test", controllers.Shell)
+	r.POST("/test", controllers.Shell)
 
 }
