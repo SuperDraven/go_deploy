@@ -10,7 +10,7 @@ func Shell(c *gin.Context)  {
 	for k, v :=range c.Request.PostForm {
 		fmt.Printf("k:%v\n", k)
 		fmt.Printf("v:%v\n", v)
-		//测试
+		//测
 	}
 	Services.ShellGo("git pull")
 }
