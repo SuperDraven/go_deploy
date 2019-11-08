@@ -7,10 +7,8 @@ import (
 )
 
 func Shell(c *gin.Context)  {
-	for k, v :=range c.Request.PostForm {
-		fmt.Printf("k:%v\n", k)
-		fmt.Printf("v:%v\n", v)
-		//测
-	}
+	buf := make([]byte, 1024)
+	n, _ := c.Request.Body.Read(buf)
+	fmt.Println(string(buf[0:n]))
 	Services.ShellGo("git pull")
 }
