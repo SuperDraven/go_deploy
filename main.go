@@ -1,17 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"os/exec"
+	"github.com/gin-gonic/gin"
+	"go_deploy/conf"
+	"go_deploy/routers"
 )
 
-
 func main()  {
-	c := "git pull"
-	cmd := exec.Command("/bin/bash", "-c", c)
-	out, err := cmd.Output()
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(string(out))
+	r := gin.Default()
+	//r.Use(Cors())
+	routers.SetRouter(r)
+
+	_ = r.Run(":" + conf.LoadConf().SitePort)
 }
