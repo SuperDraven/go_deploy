@@ -2,7 +2,7 @@ package Routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"go_deploy/controllers"
+	"go_deploy/Controllers"
 )
 //测试
 func SetRouter(r *gin.Engine) {
