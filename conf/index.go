@@ -1,9 +1,9 @@
 package conf
 
 import (
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
-	"log"
+"gopkg.in/yaml.v2"
+"io/ioutil"
+"log"
 )
 
 type Config struct {
