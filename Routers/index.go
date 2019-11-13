@@ -7,9 +7,9 @@ import (
 //测试
 func SetRouter(r *gin.Engine) {
 
-	r.GET("/", controllers.Site)
-	r.POST("/CreateProject", controllers.CreateProject)
-	r.GET("/CreateProjectForm", controllers.CreateProjectForm)
-	r.GET("/ShowProjectList", controllers.ShowProjectList)
-	r.GET("/ProjectPull/:id", controllers.ProjectPull)
+	r.GET("/", Controllers.Site)
+	r.POST("/CreateProject", Controllers.CreateProject)
+	r.GET("/CreateProjectForm", Controllers.CreateProjectForm)
+	r.GET("/ShowProjectList", Controllers.ShowProjectList)
+	r.GET("/ProjectPull/:id", Controllers.ProjectPull)
 }
