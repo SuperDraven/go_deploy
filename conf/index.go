@@ -13,6 +13,7 @@ type Config struct {
 	SitePort  string
 	SiteUrl   string
 	JwtSecret string
+	Database string
 }
 
 func LoadConf() *Config {

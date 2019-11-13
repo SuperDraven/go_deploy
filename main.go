@@ -2,14 +2,16 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"go_deploy/conf"
-	"go_deploy/routers"
+	conf "go_deploy/Conf"
+	"go_deploy/Routers"
 )
 
 func main()  {
 	r := gin.Default()
 	//r.Use(Cors())
-	routers.SetRouter(r)
+	r.LoadHTMLGlob("Resources/views/*")
+
+	Routers.SetRouter(r)
 
 	_ = r.Run(":" + conf.LoadConf().SitePort)
 }
