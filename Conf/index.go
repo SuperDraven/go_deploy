@@ -17,7 +17,7 @@ type Config struct {
 }
 
 func LoadConf() *Config {
-	source, errRead := ioutil.ReadFile("./conf/conf.yml")
+	source, errRead := ioutil.ReadFile("./Conf/conf.yml")
 	if errRead != nil {
 		log.Println(errRead)
 	}
