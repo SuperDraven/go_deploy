@@ -11,5 +11,5 @@ func SetRouter(r *gin.Engine) {
 	r.POST("/CreateProject", Controllers.CreateProject)
 	r.GET("/CreateProjectForm", Controllers.CreateProjectForm)
 	r.GET("/ShowProjectList", Controllers.ShowProjectList)
-	r.GET("/ProjectPull/:id", Controllers.ProjectPull)
+	r.POST("/ProjectPull/:id", Controllers.ProjectPull)
 }
