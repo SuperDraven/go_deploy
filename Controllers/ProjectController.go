@@ -1,6 +1,7 @@
 package Controllers
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	uuid "github.com/satori/go.uuid"
 	conf "go_deploy/Conf"
@@ -19,7 +20,7 @@ func CreateProjectForm(c *gin.Context)  {
 func CreateProject(c *gin.Context)  {
 	project := new(models.Project)
 	project.Name = c.PostForm("name")
-	project.Id = uuid.NewV4()
+	project.Uuid = uuid.NewV4()
 	project.Created_at = time.Now().Unix()
 	project.Directory = c.PostForm("directory")
 	project.Secret = c.PostForm("secret")
@@ -36,6 +37,7 @@ type Users struct {
 func ShowProjectList(c *gin.Context)  {
 	//准备sql语句
 	projects := Services.ServiceProjectShowList()
+	fmt.Println(projects)
 	c.HTML(http.StatusOK, "ProjectList.html", gin.H{
 		"data":projects,
 	})

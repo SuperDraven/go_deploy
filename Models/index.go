@@ -4,7 +4,7 @@ import (
 	//"database/sql"
 	"fmt"
 	"github.com/jmoiron/sqlx"
-	_ "github.com/go-sql-driver/mysql"
+	_"github.com/mattn/go-sqlite3"
 )
 
 
@@ -12,7 +12,7 @@ var DB *sqlx.DB
 
 func init() {
 	var errs error
-	DB, errs = sqlx.Open("mysql", `root:yxjourney!E#EGJk2@tcp(127.0.0.1:3306)/deploy`)
+	DB, errs = sqlx.Open("sqlite3", "./deploy.db")
 	if errs != nil {
 		fmt.Println(errs)
 	}
