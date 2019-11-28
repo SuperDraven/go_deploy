@@ -12,3 +12,6 @@ func Site(c *gin.Context)  {
 		"title":"site",
 	})
 }
+func Testa(c *gin.Context)  {
+	 models.CreateTabelProject();
+}

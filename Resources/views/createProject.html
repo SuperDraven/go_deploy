@@ -22,24 +22,39 @@
                         <div class="block">
                             <div class="title"><strong>All form elements</strong></div>
                             <div class="block-body">
-                                <form class="form-horizontal" method="post" action="/CreateProject">
+                                {{if .data.ContentShell}}
+                                <form class="form-horizontal" method="post" action=" /Project/edit/{{.data.Uuid}}  ">
+                                  {{else}}
+                                 <form class="form-horizontal" method="post" action="/CreateProject">
+                                  {{end}}
                                     <div class="form-group row">
                                         <label class="col-sm-3 form-control-label">名称</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="name" class="form-control">
+                                            <input type="text" name="name" value="{{if .data.Name}} {{.data.Name}} {{ end }}" class="form-control">
                                         </div>
                                     </div>
                                     <div class="line"></div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 form-control-label">路径</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="directory" class="form-control">
+                                            <input type="text" name="directory" value="{{if .data.Directory}} {{.data.Directory}} {{ end }}"  class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 form-control-label">秘银</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="Secret" class="form-control">
+                                            <input type="text" name="Secret" value="{{if .data.Secret}} {{.data.Secret}} {{ end }}"  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="line"> </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 form-control-label">shell命令</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="contentshell"   id="" cols="30" rows="10">
+                                                {{if .data.ContentShell}} {{.data.ContentShell}} {{ end }}
+                                            </textarea>
+
                                         </div>
                                     </div>
                                     <div class="line"> </div>

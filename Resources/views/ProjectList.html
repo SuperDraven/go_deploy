@@ -29,6 +29,7 @@
                                         <th>项目名称</th>
                                         <th>项目路径</th>
                                         <th>webHook地址</th>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -38,6 +39,7 @@
                                             <td>{{.Name}}</td>
                                             <td>{{.Directory}}</td>
                                             <td>{{.Webhook}}/ProjectPull/{{.Uuid}}</td>
+                                            <td><a href="/Project/show/{{.Uuid}}">修改</a><a href="/Project/delete/{{.Uuid}}">删除</a></td>
                                         </tr>
                                     {{end}}
                                     </tbody>
