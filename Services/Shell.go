@@ -18,9 +18,10 @@ func PullShellGo(directory string, c string)  {
 	fmt.Println(string(out))
 	//return
 }
-func  PullShellTest(shells string)  {
+func  PullShellTest(shell string)  {
 	commandName := "/bin/bash"
-	params :=[]string{"-c",  shells}
+
+	params :=[]string{"-c",  shell}
 	cmd := exec.Command(commandName, params...)
 
 	//显示运行的命令

@@ -3,6 +3,7 @@ module go_deploy
 go 1.12
 
 require (
+	github.com/chenhg5/go-task v0.0.0-20190412073843-cc747511ee79
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/go-stack/stack v1.8.0 // indirect
