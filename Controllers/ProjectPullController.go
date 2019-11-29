@@ -6,7 +6,6 @@ import (
 	models "go_deploy/Models"
 	"go_deploy/Services"
 	"runtime"
-	"strings"
 )
 
 func ProjectPull(c *gin.Context)  {
@@ -15,17 +14,13 @@ func ProjectPull(c *gin.Context)  {
 	id := c.Param("id")
 	project := models.ProjectShow(id)
 	Services.PullShellGo(project.Directory, "git pull origin master")
-
-	a := strings.Split(project.ContentShell, "\r")
 	ch := make(chan string)
-	go sendData(ch, a)
+	go sendData(ch, project.Uuid.String())
 	go getData(ch)
 }
 
-func sendData(ch chan string,a []string) {
-	for i:=0;i<len(a);i++ {
-		ch <- a[i]
-	}
+func sendData(ch chan string, uuid string) {
+		ch <- uuid
 	 close(ch)
 }
 

@@ -1,1 +1,4 @@
 .idea/
+deploy.db
+Shell/
+.env

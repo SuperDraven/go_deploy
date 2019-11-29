@@ -29,6 +29,7 @@ func CreateProject(c *gin.Context)  {
 	project.Webhook = conf.LoadConf().SiteUrl + ":" +conf.LoadConf().SitePort
 	project.ContentShell = c.PostForm("contentshell")
 	Services.ServiceCreateProject(project)
+	Services.GenerateShell(project.Uuid.String(), project.ContentShell)
 }
 
 type Users struct {
@@ -61,6 +62,8 @@ func EditProject(c *gin.Context)  {
 	project.Secret = c.PostForm("secret")
 	project.ContentShell = c.PostForm("contentshell")
 	Services.ServicesEditProject(id, project)
+	projects := Services.ServiceShowProject(id)
+	Services.GenerateShell(projects.Uuid.String(), project.ContentShell)
 }
 func DeleteProject(c *gin.Context)  {
 	id := c.Param("id")
