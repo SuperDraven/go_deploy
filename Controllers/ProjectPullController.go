@@ -11,7 +11,7 @@ import (
 func ProjectPull(c *gin.Context)  {
 	id := c.Param("id")
 	project := models.ProjectShow(id)
-	Services.PullShellGo(project.Directory, "git pull")
+	Services.PullShellGo(project.Directory, "git pull origin master")
 
 	 a := strings.Split(project.ContentShell, "\r")
 	fmt.Println(a)
