@@ -16,7 +16,7 @@ func ProjectPull(c *gin.Context)  {
 	 a := strings.Split(project.ContentShell, "\r")
 	fmt.Println(a)
 	for i:=0;i<len(a);i++ {
-		Services.PullShellTest(a[i])
+		//Services.PullShellTest(a[i])
 	}
 	//c.JSON(http.StatusOK, gin.H{
 	//	"data":project,
