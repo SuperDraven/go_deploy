@@ -2,3 +2,6 @@
 deploy.db
 Shell/
 .env
+go.mod
+go_deploy
+go.sum
