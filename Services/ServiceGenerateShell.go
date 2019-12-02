@@ -22,7 +22,8 @@ func GenerateShell(fileName string, content string)  {
 	if err != nil {
 		panic(err)
 	}
-	contentShell := "#!/bin/sh\r"+content
+	//contentShell := "#!/bin/sh"+"\r"+content
+	contentShell := content
 	for _, v := range contentShell {
 		//将数据写入缓冲区
 		//func (b *Writer) WriteString(s string) (int, error)
