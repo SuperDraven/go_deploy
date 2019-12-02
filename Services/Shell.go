@@ -6,7 +6,7 @@ import (
 )
 
 func PullShellGo(directory string, c string)  {
-	c = "cd " +directory+" && "+c
+	c = "cd " +directory+" && "+c + "&& pwd"
 	fmt.Println(c)
 	cmd := exec.Command("/bin/bash", "-c", c)
 	out, err := cmd.Output()
