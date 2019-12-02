@@ -22,6 +22,7 @@ func  PullShellTest(shell string)  {
 
 	output, err := cmd.Output()
 	if err != nil {
+		fmt.Println(err)
 		fmt.Printf("Execute Shell:%s failed with error:%s", command, err.Error())
 		return
 	}
