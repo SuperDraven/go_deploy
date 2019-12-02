@@ -38,6 +38,6 @@ func GenerateShell(fileName string, content string)  {
 
 	data, _ = ioutil.ReadFile(path)
 	fmt.Println(string(data))   //1234567890
-	a := "sed -i 's/\\r//'" + "./Shell/"+fileName+".sh"
+	a := "sed -i 's/\\r//'" + " ./Shell/"+fileName+".sh"
 	ExecuteShell(a)
 }
