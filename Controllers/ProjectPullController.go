@@ -13,7 +13,7 @@ func ProjectPull(c *gin.Context)  {
 	task.InitTaskReceiver(runtime.NumCPU())
 	id := c.Param("id")
 	project := models.ProjectShow(id)
-	Services.PullShellGo(project.Directory, "git pull origin master")
+	Services.ExecuteShell("cd "+project.Directory + " && git pull origin master")
 	ch := make(chan string)
 	go sendData(ch, project.Uuid.String())
 	go getData(ch)

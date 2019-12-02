@@ -5,16 +5,14 @@ import (
 	"os/exec"
 )
 
-func PullShellGo(directory string, c string)  {
-	c = "cd " +directory+" && "+c + "&& pwd"
-	fmt.Println(c)
+func ExecuteShell(c string)  {
 	cmd := exec.Command("/bin/bash", "-c", c)
+	fmt.Println(c)
 	out, err := cmd.Output()
 	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println(string(out))
-	//return
 }
 func  PullShellTest(shell string)  {
 	command := `./Shell/`+shell+`.sh`
