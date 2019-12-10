@@ -64,7 +64,9 @@ func EditProject(c *gin.Context)  {
 	Services.ServicesEditProject(id, project)
 	projects := Services.ServiceShowProject(id)
 	fmt.Println(project.ContentShell)
-	Services.GenerateShell(projects.Uuid.String(), project.ContentShell)
+	if project.ContentShell != "" {
+		Services.GenerateShell(projects.Uuid.String(), project.ContentShell)
+	}
 }
 func DeleteProject(c *gin.Context)  {
 	id := c.Param("id")
